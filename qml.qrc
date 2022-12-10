@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>shader/fragment.frag</file>
+        <file>shader/vertex.vert</file>
+        <file>1920x1080.UYVY</file>
+    </qresource>
+</RCC>

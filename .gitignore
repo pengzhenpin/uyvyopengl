@@ -6,3 +6,4 @@
 *.exe~
 *.db
 doc/
+*.user

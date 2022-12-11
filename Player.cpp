@@ -112,18 +112,15 @@ QOpenGLFramebufferObject *PlayerRenderer::createFramebufferObject(const QSize &s
 
 void PlayerRenderer::filt()
 {
-    if (size.width() <= 0 || size.height() <= 0)
+    if (size.width() <= 0 || size.height() <= 0 || width <= 0 || height <= 0)
         return;
-    if (width <= 0 || height <= 0)
-        return;
-    int vw = size.width();           // view width
+    int vw = size.width() / 2 * 2;   // view width
     int vh = size.height() / 2 * 2;  // view height
     QSize vsize = QSize(width, height / 2 * 2);
     vsize.scale(vw, vh, Qt::KeepAspectRatio);
-    float w = vsize.width();
+    float w = vsize.width() / 2 * 2;
     float h = vsize.height() / 2 * 2;
     vertices.clear();
     vertices << QVector3D(-w / vw, -h / vh, 0.0f) << QVector3D(w / vw, -h / vh, 0.0f)
              << QVector3D(-w / vw, h / vh, 0.0f) << QVector3D(w / vw, h / vh, 0.0f);
-    qDebug() << size << vsize << vertices;
 }
